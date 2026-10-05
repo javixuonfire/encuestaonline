@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ✅ SEGURIDAD: Content Security Policy — restringe los orígenes de recursos permitidos -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://jaivxu.app.n8n.cloud; img-src 'self' data:;">
+  <title>Encuesta de Satisfacción | Curso Antigravity</title>
+  <meta name="description" content="Encuesta de satisfacción para estudiantes del curso de desarrollo con IA y Antigravity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-decorations">
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+    <div class="glow-sphere glow-3"></div>
+  </div>
+
+  <main class="main-container">
+    <!-- Header -->
+    <header class="survey-header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Curso de Antigravity
+      </div>
+      <h1>Encuesta de Satisfacción</h1>
+      <p class="subtitle">
+        Tu experiencia y comentarios nos ayudan a seguir perfeccionando los contenidos y proyectos del curso. ¡Solo te tomará un par de minutos!
+      </p>
+    </header>
+
+    <!-- Card del Formulario -->
+    <div class="form-wrapper">
+      <form id="survey-form" novalidate>
+        
+        <!-- Campo: ID Estudiante -->
+        <div class="form-group" id="group-id-estudiante">
+          <label for="id_estudiante" class="field-label">
+            <span class="field-number">1</span>
+            <span>Identificador del Estudiante</span>
+            <span class="required-indicator" aria-hidden="true">*</span>
+          </label>
+          <p class="field-desc">Ingresa tu ID de alumno o correo electrónico de registro.</p>
+          <div class="input-container">
+            <input 
+              type="text" 
+              id="id_estudiante" 
+              name="id_estudiante" 
+              placeholder="Ej. EST-9482 o tu nombre/correo" 
+              required
+              autocomplete="off"
+            >
+            <span class="field-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+          </div>
+          <span class="error-message" id="error-id-estudiante">Por favor, escribe tu identificador.</span>
+        </div>
+
+        <!-- Campo: Nivel de Satisfacción -->
+        <div class="form-group" id="group-nivel-satisfaccion">
+          <label class="field-label">
+            <span class="field-number">2</span>
+            <span>Nivel General de Satisfacción</span>
+            <span class="required-indicator" aria-hidden="true">*</span>
+          </label>
+          <p class="field-desc">¿Qué tan satisfecho estás con tu experiencia en el curso?</p>
+          
+          <div class="scale-selector" role="radiogroup" aria-labelledby="group-nivel-satisfaccion">
+            <label class="scale-option">
+              <input type="radio" name="nivel_satisfaccion" value="1" required>
+              <div class="scale-card">
+                <span class="scale-value">1</span>
+                <span class="scale-emoji">😞</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="nivel_satisfaccion" value="2">
+              <div class="scale-card">
+                <span class="scale-value">2</span>
+                <span class="scale-emoji">😐</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="nivel_satisfaccion" value="3">
+              <div class="scale-card">
+                <span class="scale-value">3</span>
+                <span class="scale-emoji">🙂</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="nivel_satisfaccion" value="4">
+              <div class="scale-card">
+                <span class="scale-value">4</span>
+                <span class="scale-emoji">😃</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="nivel_satisfaccion" value="5">
+              <div class="scale-card">
+                <span class="scale-value">5</span>
+                <span class="scale-emoji">🤩</span>
+              </div>
+            </label>
+          </div>
+          <div class="scale-legend">
+            <span>Muy insatisfecho (1)</span>
+            <span>Muy satisfecho (5)</span>
+          </div>
+          <span class="error-message" id="error-nivel-satisfaccion">Por favor, califica tu nivel de satisfacción.</span>
+        </div>
+
+        <!-- Campo: Claridad del Contenido -->
+        <div class="form-group" id="group-claridad-contenido">
+          <label class="field-label">
+            <span class="field-number">3</span>
+            <span>Claridad del Contenido</span>
+            <span class="required-indicator" aria-hidden="true">*</span>
+          </label>
+          <p class="field-desc">¿Los conceptos, explicaciones y ejemplos fueron fáciles de comprender?</p>
+          
+          <div class="scale-selector" role="radiogroup" aria-labelledby="group-claridad-contenido">
+            <label class="scale-option">
+              <input type="radio" name="claridad_contenido" value="1" required>
+              <div class="scale-card">
+                <span class="scale-value">1</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="claridad_contenido" value="2">
+              <div class="scale-card">
+                <span class="scale-value">2</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="claridad_contenido" value="3">
+              <div class="scale-card">
+                <span class="scale-value">3</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="claridad_contenido" value="4">
+              <div class="scale-card">
+                <span class="scale-value">4</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="claridad_contenido" value="5">
+              <div class="scale-card">
+                <span class="scale-value">5</span>
+              </div>
+            </label>
+          </div>
+          <div class="scale-legend">
+            <span>Muy poco claro (1)</span>
+            <span>Muy claro (5)</span>
+          </div>
+          <span class="error-message" id="error-claridad-contenido">Por favor, califica la claridad del contenido.</span>
+        </div>
+
+        <!-- Campo: Aplicabilidad Práctica -->
+        <div class="form-group" id="group-aplicabilidad-practica">
+          <label class="field-label">
+            <span class="field-number">4</span>
+            <span>Aplicabilidad Práctica</span>
+            <span class="required-indicator" aria-hidden="true">*</span>
+          </label>
+          <p class="field-desc">¿Qué tan útiles y aplicables consideras los conocimientos para proyectos reales?</p>
+          
+          <div class="scale-selector" role="radiogroup" aria-labelledby="group-aplicabilidad-practica">
+            <label class="scale-option">
+              <input type="radio" name="aplicabilidad_practica" value="1" required>
+              <div class="scale-card">
+                <span class="scale-value">1</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="aplicabilidad_practica" value="2">
+              <div class="scale-card">
+                <span class="scale-value">2</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="aplicabilidad_practica" value="3">
+              <div class="scale-card">
+                <span class="scale-value">3</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="aplicabilidad_practica" value="4">
+              <div class="scale-card">
+                <span class="scale-value">4</span>
+              </div>
+            </label>
+            <label class="scale-option">
+              <input type="radio" name="aplicabilidad_practica" value="5">
+              <div class="scale-card">
+                <span class="scale-value">5</span>
+              </div>
+            </label>
+          </div>
+          <div class="scale-legend">
+            <span>Nada aplicable (1)</span>
+            <span>Muy aplicable (5)</span>
+          </div>
+          <span class="error-message" id="error-aplicabilidad-practica">Por favor, califica la aplicabilidad práctica.</span>
+        </div>
+
+        <!-- Campo: Comentarios Adicionales -->
+        <div class="form-group" id="group-comentarios">
+          <label for="comentarios_adicionales" class="field-label">
+            <span class="field-number">5</span>
+            <span>Comentarios Adicionales</span>
+            <span class="optional-badge">(Opcional)</span>
+          </label>
+          <p class="field-desc">Comparte tus sugerencias, temas que te gustaría profundizar o reflexiones sobre el curso.</p>
+          <!-- ✅ SEGURIDAD: maxlength limita el tamaño del payload enviado al servidor -->
+          <textarea 
+            id="comentarios_adicionales" 
+            name="comentarios_adicionales" 
+            rows="4" 
+            maxlength="1000"
+            placeholder="Cuéntanos con total confianza qué te ha parecido o qué mejorarías..."
+          ></textarea>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="primary-btn">
+            <span>Enviar Encuesta</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Mensaje de éxito tras el envío -->
+      <div id="success-screen" class="success-screen hidden" aria-live="polite">
+        <div class="success-icon-wrapper">
+          <svg class="success-checkmark" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h2>¡Muchas gracias por tu respuesta!</h2>
+        <p class="success-message">Tu opinión sobre el curso de Antigravity ha sido registrada exitosamente.</p>
+        
+        <div class="summary-card" id="summary-card">
+          <!-- Inyectado dinámicamente por JavaScript -->
+        </div>
+
+        <button type="button" id="reset-btn" class="secondary-btn">
+          <span>Completar otra respuesta</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="survey-footer">
+      <p>&copy; Curso Antigravity — Creando Aplicaciones con Inteligencia Artificial</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
